@@ -1,0 +1,117 @@
+\section*{Measures of Central Tendency}
+
+\textbf{Desirable properties} of a satisfactory average (or measure of dispersion) according to G. U. Yule:
+
+\begin{itemize}
+    \item It should be rigidly defined.
+    \item It should be based on all observations.
+    \item It should be readily comprehensible.
+    \item It should be easily calculable.    
+    \item It should be affected as little as possible by sampling fluctuations.
+    \item It should readily lend itself to algebraic treatment.
+\end{itemize}
+
+\subsection*{Mean}
+\textbf{Arithmetic Mean (AM)}
+
+\begin{itemize}
+    \item Simple A.M.: $ \bar{x} = \frac{1}{n}\sum_1^n x_i $
+    \item $x_i$: observations, $n$: number of observations.
+    \item Weighted A.M.: $ \bar{x} = \frac{1}{N}\sum_1^n f_i x_i $
+    \item $f_i$: frequencies, $N$: $\sum_1^n f_i$.
+\end{itemize}
+
+\textbf{Geometric Mean (GM)}
+
+\begin{itemize}
+    \item Simple G.M.: $ g = \sqrt[n]{x_1 x_2 \dots x_n}$
+    \item Weighted G.M.: $ g = \sqrt[N]{x_1^{f_1} x_2^{f_2} \dots x_n^{f_n}} $
+\end{itemize}
+
+\textbf{Harmonic Mean (HM)}
+\begin{itemize}
+    \item Simple HM: $ h = \frac{n}{\sum_i \frac{1}{x_i}} $
+    \item Weighted HM: $ h = \frac{N}{\sum_i \frac{f_i}{x_i}} $
+\end{itemize}
+
+\subsection*{Median and Mode}
+\textbf{Median}
+\begin{itemize}
+    \item Odd $n$: $ M = x_{(n+1)/2} $
+    \item Even $n$: $ M = \frac{x_{n/2} + x_{n/2+1}}{2} $
+\end{itemize}
+
+\textbf{Mode}
+\begin{itemize}
+    \item The most frequently occurring value.
+\end{itemize}
+
+\subsection*{For Grouped Data}
+\textbf{Mean:} $ \bar{x} = \frac{\sum f_i x_i}{\sum f_i} $
+
+\textbf{Median:} $ l_1 + \frac{\frac{N}{2} - F}{f_m} \times c $
+\begin{itemize}
+    \item $l_1$: lower boundary of median class
+    \item $N$: total frequency
+    \item $F$: cumulative frequency corresponding to $l_1$
+    \item $f_m$: frequency of median class
+    \item $c$: width of median class
+\end{itemize}
+
+\textbf{Mode:} $ l_1 + \frac{d_1}{d_1 + d_2} \times c $
+\begin{itemize}
+    \item $l_1$: lower boundary of modal class
+    \item $d_1$: difference between frequency of modal class and preceding class $(f_1 - f_0)$
+    \item $d_2$: difference between frequency of modal class and following class $(f_1 - f_2)$
+    \item $c$: common width of classes
+\end{itemize}
+
+\subsection*{Properties of AM}
+\begin{itemize}
+    \item $ \sum x_i = n \bar{x} $ (Total of observations)
+    \item $ \sum (x_i - \bar{x}) = 0 $ (Sum of deviations)
+    \item If $ z = ax + b $, then $ \bar{z} = a \bar{x} + b $
+    \item Mean of combined groups:
+    \[ \bar{x} = \frac{n_1 \bar{x}_1 + n_2 \bar{x}_2}{n_1 + n_2} \]
+    \item $ \sum (x_i - A)^2 $ is minimized when $ A = $ simple A.M.
+    \item $ \sum f_i(x_i - A)^2 $ is minimized when $ A = $ weighted A.M.
+\end{itemize}
+
+\subsection*{Properties of GM}
+\begin{itemize}
+    \item $ x_1 x_2 \dots x_n = g^n $
+    \item $ \ln g = \frac{1}{n} \sum \ln x_i $
+\end{itemize}
+
+\subsection*{Relations between AM, GM, HM}
+\begin{itemize}
+    \item $ AM \geq GM \geq HM $ (Equality holds if all values are equal.)
+    \item For two values, $ \frac{AM}{GM} = \frac{GM}{HM} $
+\end{itemize}
+
+\subsection*{Mean, Median, Mode Relationship}
+\begin{itemize}
+    \item $ \text{Mean} - \text{Mode} = 3(\text{Mean} - \text{Median}) $
+\end{itemize}
+
+\subsection*{Partition Values}
+\textbf{Quartiles:}
+\begin{itemize}
+    \item $ Q_1 < Q_2 < Q_3 $
+    \item Median = $ Q_2 $
+    \item Quartile deviation: $ \frac{Q_3 - Q_1}{2} $
+    \item Skewness: $ \frac{Q_3 - 2Q_2 + Q_1}{Q_3 - Q_1} $
+\end{itemize}
+
+\textbf{Deciles:}
+\begin{itemize}
+    \item $ D_1 < D_2 < \dots < D_9 $, $ D_5 = Q_2 $
+\end{itemize}
+
+\textbf{Percentiles:}
+\begin{itemize}
+    \item $ P_1 < P_2 < \dots < P_{99} $
+    \item $ P_{10} = D_1, P_{20} = D_2, \dots, P_{90} = D_9 $
+    \item $ P_{25} = Q_1, P_{50} = Q_2, P_{75} = Q_3 $
+\end{itemize}
+
