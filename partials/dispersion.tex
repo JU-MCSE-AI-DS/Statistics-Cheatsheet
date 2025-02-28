@@ -26,8 +26,6 @@
 
 \textbf{Coefficient of Variation:} $\frac{\sigma}{\text{Mean}} \times 100$
 
-\textbf{Coefficient of Quartile Deviation:} $\frac{Q_3 - Q_1}{Q_2} \times 100$
-
 \subsection*{Properties of Standard Deviation}
 \begin{itemize}
     \item $\sigma \geq 0$ (\textbf{non-negative}), $0$ only when all values are equal
@@ -36,4 +34,23 @@
     \item $z = ax + b$, where $a$ and $b$ are constants, $\sigma_z = |a| \sigma_x$ (\textbf{dependent on change in scale})
     \item $N \sigma^2 = (n_1 \sigma_1^2 + n_2 \sigma_2^2) + (n_1 d_1^2 + n_2 d_2^2) $ (for composite groups)
     \item $N = n_1 + n_2, d_1 = \bar{x}_1 - \bar{x}$, $d_2 = \bar{x}_2 - \bar{x}, N \bar{x} = n_1 \bar{x}_1 + n_2 \bar{x}_2$
+    \item $\sqrt{\frac{1}{n} \sum(x_i - A)}$ is minimum when $A = \bar{x}$
+
+    Standard deviation is the \textbf{minimum root mean square deviation}
 \end{itemize}
+
+\subsection*{Important Results Related to Standard Deviation}
+\begin{itemize}
+    \item $\sum_1^n (x_i - \bar{x})^2 = \sum_1^n x_i^2 - n \bar{x}^2$
+    \item $\sum_1^n f_i(x_i - \bar{x})^2 = \sum_1^n f_i x_i^2 - N \bar{x}^2$
+    \item $\sigma^2 = \frac{\sum x_i^2}{n} - \left (\frac{\sum x_i}{n} \right )^2$ (for simple series)
+    \item $\sigma^2 = \frac{\sum f_i x_i^2}{N} - \left (\frac{\sum f_i x_i}{N} \right )^2$ (for frequency distributions)
+    \item $99.7\%$, $95\%$, $68\%$ of the area under the normal curve lies within $(\text{mean} \pm 3\sigma)$, $(\text{mean} \pm 2\sigma)$, $(\text{mean} \pm \sigma)$ respectively
+\end{itemize}
+
+\subsection*{Relation Between S.D. and Other Measures}
+\begin{itemize}
+    \item $\text{S.D.} \geq \text{M.D.} \geq \text{Q.D.}$
+    \item For the normal distribution, $\text{range} \approx 6\sigma$, $\text{Q.D.} \approx 0.67 \sigma$ and $\text{M.D.} \approx 0.80 \sigma$
+\end{itemize}
+
