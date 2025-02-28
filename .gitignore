@@ -17,8 +17,8 @@
 *.xdv
 *-converted-to.*
 
-## Main output file
-main.pdf
+## Ignore all pdfs in the root directory
+*.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
