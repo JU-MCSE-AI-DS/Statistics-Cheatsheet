@@ -36,18 +36,21 @@ Statistical data relating to the simultaneous variation of two variables is call
 
 \textbf{Bivariate Frequency Distribution}
 
+\begin{table}[h]
+\centering
 \begin{tblr}{
-  colspec={X[c] X[c] X[c] X[c] X[c] X[c] X[c]},
+  colspec={|c|Q[2.25em]|Q[1.95em]|Q[1.95em]|Q[1.95em]|Q[1.95em]|Q[2.60em]|},
   hlines,
   vlines
 }
-  \textbf{Ht. (in)} & \textbf{111-120} & \textbf{121-130} & \textbf{131-140} & \textbf{141-150} & \textbf{151-160} & \textbf{Total} \\
+  \SetCell[r=1]{c} \diagbox[dir=SE, height=4em]{\textbf{Ht}}{\textbf{Wt}} & \textbf{111-120} & \textbf{121-130} & \textbf{131-140} & \textbf{141-150} & \textbf{151-160} & \textbf{Total} \\
   58-61  & 1 & 0 & 0 & 0 & 0 & 1 \\
   62-65  & 1 & 1 & 1 & 0 & 0 & 3 \\
   66-69  & 0 & 0 & 3 & 2 & 2 & 7 \\
   70-73  & 0 & 1 & 2 & 1 & 0 & 4 \\
   \textbf{Total} & 2 & 2 & 6 & 3 & 2 & \textbf{15} \\
 \end{tblr}
+\end{table}
 
 \subsection*{Correlation}
 
@@ -175,7 +178,7 @@ Statistical data relating to the simultaneous variation of two variables is call
         As $r$ increases from $0$ to $1$, the angle decreases from $90^\circ$ to $0^\circ$.
 \end{itemize}
 
-\subsection*{Explain and Unexplained Variation}
+\subsection*{Explained and Unexplained Variation}
 
 \begin{itemize}
     \item $y_i' \rightarrow$ \textit{estimated} value of $y$ from the regression equation of $y$ on $x$.
