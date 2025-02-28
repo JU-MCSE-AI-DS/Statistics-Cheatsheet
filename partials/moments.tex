@@ -1,0 +1,97 @@
+\section*{Moments, Skewness and Kurtosis}
+
+Given $n$ observations $x_1, x_2, \dots, x_n$ and an arbitrary constant $A$, 
+\begin{itemize}
+    \item $r^\text{th}$ moment about $A$: $\frac{1}{n} \sum(x_i - A)^r$
+    \item Represented as $m_r'$, sometimes $\mu_r'$
+\end{itemize}
+
+\subsection*{Moments for Discrete Series}
+\begin{itemize}
+    \item $r^\text{th}$ moment about $A$: $m_r' = \frac{1}{n} \sum (x_i - A)^r$
+    \item $r^\text{th}$ raw moment: $m_r' = \frac{1}{n} \sum x_i^r$
+    \item $r^\text{th}$ central moment: $m_r = \frac{1}{n} \sum (x_i - \bar{x})^r$
+\end{itemize}
+
+\subsection*{Moments for Frequency Distribution}
+\begin{itemize}
+    \item $r^\text{th}$ moment about $A$: $m_r' = \frac{1}{N} \sum f_i (x_i - A)^r$
+    \item $r^\text{th}$ raw moment: $m_r' = \frac{1}{N} \sum f_i x_i^r$
+    \item $r^\text{th}$ central moment: $m_r = \frac{1}{N} \sum f_i (x_i - \bar{x})^r$
+\end{itemize}
+
+\subsection*{Important Properties of Moments}
+\begin{itemize}
+    \item $1^\text{st}$ raw moment: $\frac{1}{n} \sum x_i = \bar{x}$ (\textbf{mean})
+    \item $1^\text{st}$ central moment: $\frac{1}{n} \sum (x_i - \bar{x}) = 0$ (\textbf{zero})
+    \item $2^\text{nd}$ central moment: $\frac{1}{n} \sum (x_i - \bar{x})^2 = \sigma^2$ (\textbf{variance})
+    \item $\bar{x} = m_1' + A$ (mean; $m_1'$: $1^\text{st}$ moment about $A$)
+    \item $\sigma^2 = m_2' - m_1'^2$ (variance)
+\end{itemize}
+
+\subsection*{Relation Between Central and Non-Central Moments}
+\begin{itemize}
+    \item $m_1' = m_1'$
+    \item $m_2' = m_2 + m_1'^2$
+    \item $m_3' = m_3 + 3m_2 m_1' + m_1'^3$
+    \item $m_4' = m_4 + 4m_3 m_1' + 6m_2 m_1'^2 + m_1'^4$
+\end{itemize}
+
+\subsection*{Beta-Coeficients}
+\begin{itemize}
+    \item $\beta_1 = \frac{m_3^2}{m_2^3}$
+    \item $\beta_2 = \frac{m_4}{m_2^2}$
+    \item $\beta_1$, $\beta_2$ are \textbf{non-negative} \textbf{pure numbers} and \textbf{independent of change in origin and scale}
+    \item $\beta_1 = 0$: \textbf{symmetrical distribution}
+    \item $\beta_2 < 3$: \textbf{platykurtic distribution}
+    \item $\beta_2 = 3$: \textbf{mesokurtic distribution}
+    \item $\beta_2 > 3$: \textbf{leptokurtic distribution}
+\end{itemize}
+
+\subsection*{Gamma-Coeficients}
+\begin{itemize}
+    \item $\gamma_1 = \sqrt{\beta_1} = \frac{m_2}{\sigma^2}$ (\textbf{skewness})
+    \item $\gamma_2 = \beta_2 - 3 = \frac{m_4}{\sigma^4} - 3$ (\textbf{kurtosis})
+\end{itemize}
+
+\subsection*{Standardization}
+
+\begin{itemize}
+    \item $z = \frac{x - \bar{x}}{\sigma}$ (standardized variable/standard form of $x$)
+    \item It is independent of change in origin and scale
+    \item $\bar{z} = 0$, $\sigma_z = 1$
+    \item $r^\text{th}$ central moment of $z$ is the same as $r^\text{th}$ raw moment of $x$ and denoted by $a_r$
+    \item $a_r = \frac{m_r}{\sigma^r}$
+    \item $a_1 = 0$, $a_2 = 1$, $a_3 = \sqrt{\beta_1} = \gamma_1$, $a_4 = \beta_2 = \gamma_2 + 3$
+\end{itemize}
+
+\subsection*{Charlier's Check}
+
+\begin{itemize}
+    \item C. V. L. Charlier proposed a check for the correctness of moments calculated from a grouped frequency distribution
+    \item $\sum f(y + 1)^4 = \sum fy^4 + 4 \sum fy^3 + 6 \sum fy^2 + 4 \sum fy + N$
+\end{itemize}
+
+\subsection*{Measures of Skewness}
+\begin{itemize}
+    \item Pearson's first measure: $\frac{\text{Mean} - \text{Mode}}{\text{Standard Deviation}}$
+    \item Pearson's second measure: $\frac{3(\text{Mean} - \text{Median})}{\text{Standard Deviation}}$
+    \item Bowley's measure: $\frac{Q_3 - 2Q_2 + Q_1}{Q_3 - Q_1}$
+    \item Moment measure: $\gamma_1 = \frac{m_3}{\sqrt{m_2}^3}$
+\end{itemize}
+
+\subsection*{Positions of Mean, Median and Mode}
+\begin{itemize}
+    \item Positive skewness: $\text{Mode} < \text{Median} < \text{Mean}$
+    \item Negative skewness: $\text{Mean} < \text{Median} < \text{Mode}$
+    \item Zero skewness (symmetrical distribution): $\text{Mean} = \text{Median} = \text{Mode}$
+\end{itemize}
+
+\subsection*{Kurtosis}
+\begin{itemize}
+    \item Degree of "peakedness" of a distribution
+    \item Kurtosis $\gamma_2 = \frac{m_4}{\sigma^4} - 3 = \beta_2 - 3$
+    \item $\gamma_2 < 0$: \textbf{platykurtic distribution}
+    \item $\gamma_2 = 0$: \textbf{mesokurtic distribution}
+    \item $\gamma_2 > 0$: \textbf{leptokurtic distribution}
+\end{itemize}
