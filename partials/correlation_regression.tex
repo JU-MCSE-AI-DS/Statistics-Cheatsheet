@@ -1,0 +1,237 @@
+\section*{Correlation and Regression}
+
+\subsection*{Bivariate Data}
+Statistical data relating to the simultaneous variation of two variables is called bivariate data.
+
+\textbf{Marginal Distribution of Height}
+
+\begin{tblr}{
+  colspec={X[c] X[c]},
+  hlines,
+  vlines
+}
+  \textbf{Height (inches)} & \textbf{Frequency} \\
+  58-61 & 1  \\
+  62-65 & 3  \\
+  66-69 & 7  \\
+  70-73 & 4  \\
+  \textbf{Total} & \textbf{15} \\
+\end{tblr}
+
+\textbf{Marginal Distribution of Weight}
+
+\begin{tblr}{
+  colspec={X[c] X[c]},
+  hlines,
+  vlines
+}
+  \textbf{Weight (lbs.)} & \textbf{Frequency} \\
+  111-120 & 2  \\
+  121-130 & 2  \\
+  131-140 & 6  \\
+  141-150 & 3  \\
+  151-160 & 2  \\
+  \textbf{Total} & \textbf{15} \\
+\end{tblr}
+
+\textbf{Bivariate Frequency Distribution}
+
+\begin{tblr}{
+  colspec={X[c] X[c] X[c] X[c] X[c] X[c] X[c]},
+  hlines,
+  vlines
+}
+  \textbf{Ht. (in)} & \textbf{111-120} & \textbf{121-130} & \textbf{131-140} & \textbf{141-150} & \textbf{151-160} & \textbf{Total} \\
+  58-61  & 1 & 0 & 0 & 0 & 0 & 1 \\
+  62-65  & 1 & 1 & 1 & 0 & 0 & 3 \\
+  66-69  & 0 & 0 & 3 & 2 & 2 & 7 \\
+  70-73  & 0 & 1 & 2 & 1 & 0 & 4 \\
+  \textbf{Total} & 2 & 2 & 6 & 3 & 2 & \textbf{15} \\
+\end{tblr}
+
+\subsection*{Correlation}
+
+\begin{itemize}
+    \item Denotes the \textit{degree of association} between two variables.
+    \item Consider two variables $x$ and $y$
+    \item If $y$ tends to increase as $x$ increases, then $x$ and $y$ are \textbf{positively correlated}.
+    \item If $y$ tends to decrease as $x$ increases, then $x$ and $y$ are \textbf{negatively correlated}.
+    \item Correlation may be \textbf{linear} or \textbf{non-linear}.
+\end{itemize}
+
+\subsection*{Covariance}
+
+\begin{itemize}
+    \item Consider $(x_1, y_1), (x_2, y_2), \dots (x_n, y_n)$
+    \item $\text{cov}(x, y) = \frac{1}{n} \sum (x_i - \bar{x})(y_i - \bar{y})$
+    \item $\text{cov}(x, y) = \frac{\sum x_i y_i}{n} - \Big( \frac{\sum x_i}{n} \Big)  \Big( \frac{\sum y_i}{n} \Big)$ (after expanding)
+\end{itemize}
+
+\subsection*{Properties of Covariance}
+
+\begin{itemize}
+    \item Properties similar to variance
+    \item If $X = x - c$ and $Y = y - c'$, then $\text{cov}(x, y) = \text{cov}(X, Y)$
+    \item If $u = \frac{x - c}{d}$ and $v = \frac{y - c'}{d'}$, then $\text{cov}(x, y) = dd' \text{cov}(u, v)$
+    \item While variance is always non-negative, \textbf{covariance can be negative}.
+\end{itemize}
+
+\subsection*{Correlation Coefficient}
+\begin{itemize}
+    \item $r = \frac{\text{cov}(x, y)}{\sigma_x \sigma_y}$
+    \item Above expression is known as Pearson's product-moment formula.
+    \item Is used to measure \textbf{linear correlation}.
+    \item Upon expansion, $r = \frac{n \sum x_i y_i - (\sum x_i)(\sum y_i)}{\sqrt{n \sum x_i^2 - (\sum x_i)^2} \sqrt{n \sum y_i^2 - (\sum y_i)^2}}$
+\end{itemize}
+
+\subsection*{Properties of Correlation Coefficient}
+
+\begin{itemize}
+    \item $u = \frac{x - c}{d}$ and $v = \frac{y - c'}{d'}$, then $r_{xy} = r_{uv}$ (independent of change in origin and scale)
+
+    \item $r$ is a \textbf{pure number} and is \textbf{independent of units of measurement}.
+    \item $-1 \leq r \leq 1$
+    \item Can help estimate the value of $y$, given $x$ using the \textbf{ regression equation }: $y - \bar{y} = r \frac{\sigma_y}{\sigma_x} (x - \bar{x})$
+    \item Proportion of variation explained by regression is $r^2$
+    \item When $r = 0$, neither $y$ nor $x$ can be used to predict each other.
+\end{itemize}
+
+\subsection*{Limitations of $r$}
+
+\begin{itemize}
+    \item Linear relationship is assumed
+    \item Small value of $r$ indicates only a poor \textbf{linear} relationship; does not rule out a \textbf{non-linear} relationship.
+    \item High value of $t$ does not imply cause-and-effect relationship. High $r$ may be due to a third variable affecting both $x$ and $y$.
+    \item Two series may have a high $r$ even if they are not related. This is known as \textbf{spurious correlation}.
+    \item If the data is not reasonably homogeneous, $r$ may not be reliable.
+\end{itemize}
+
+\subsection*{Variance of the Sum/Difference of Two Series}
+
+\begin{itemize}
+    \item Consider $(x_1, y_1), (x_2, y_2), \dots (x_n, y_n)$
+    \item Combine to get $x_1 + y_1, x_2 + y_2, \dots x_n + y_n$ and $x_1 - y_1, x_2 - y_2, \dots x_n - y_n$
+    \item $\text{var}(x + y) = \text{var}(x) + \text{var}(y) + 2 \text{cov}(x, y)$
+
+    $\sigma_{x + y}^2 = \sigma_x^2 + \sigma_y^2 + 2r \sigma_x \sigma_y$
+
+    $r = \frac{\sigma_{x+y}^2 - \sigma_x^2 - \sigma_y^2}{2 \sigma_x \sigma_y}$
+    \item $\text{var}(x - y) = \text{var}(x) + \text{var}(y) - 2 \text{cov}(x, y)$
+
+    $\sigma_{x - y}^2 = \sigma_x^2 + \sigma_y^2 - 2r \sigma_x \sigma_y$
+
+        $r = \frac{\sigma_x^2 + \sigma_y^2 - \sigma_{x-y}^2}{2 \sigma_x \sigma_y}$
+
+    \item If $x$ and $y$ are \textbf{uncorrelated}, $\text{cov}(x, y) = 0$
+
+    $\text{var}(x + y) = \text{var}(x - y) = \text{var}(x) + \text{var}(y)$
+    \item In general, if $z = ax + by$
+
+    $\text{var}(z) = a^2 \sigma_x^2 + b^2 \sigma_y^2 + 2ab \cdot r \sigma_x \sigma_y$
+        
+\end{itemize}
+
+\subsection*{Regression}
+
+\begin{itemize}
+    \item Denotes \textit{estimation} or \textit{prediction} of the average value of one variable given the other.
+    \item It is done using the \textbf{regression equation}. Its geometric interpretation is the \textbf{regression curve}.
+    \item Regression equation of $y$ on $x$:
+        
+        $y - \bar{y} = b_{yx} (x - \bar{x})$
+
+        $b_{yx} = \frac{\text{cov}(x, y)}{\sigma_x^2} = r \frac{\sigma_y}{\sigma_x}$
+
+    \item Regression equation of $x$ on $y$:
+
+        $x - \bar{x} = b_{xy} (y - \bar{y})$
+
+        $b_{xy} = \frac{\text{cov}(x, y)}{\sigma_y^2} = r \frac{\sigma_x}{\sigma_y}$
+
+    \item $b_{yx}$, $b_{xy}$ are known as \textbf{regression coefficients}.
+
+\end{itemize}
+
+\subsection*{Properties of Linear Regression}
+
+\begin{itemize}
+    \item $b_{yx} \cdot b_{xy} = r^2$
+    \item $r, b_{yx}, b_{xy}$ have the same sign
+
+        If $r$ is $0$, $b_{yx}$ and $b_{xy}$ are also $0$.
+
+    \item The regression lines always intersect at $(\bar{x}, \bar{y})$.
+
+    \item Slope of the regression line of $y$ on $x$ is $b_{yx}$
+
+    \item Slope of the regression line of $x$ on $y$ is $\frac{1}{b_{xy}}$
+
+    \item Angle between the regression lines depends on $r$.
+
+        When $r = 0$, the lines are \textbf{perpendicular}.
+
+        When $r = \pm 1$, the lines \textbf{coincide}.
+
+        As $r$ increases from $0$ to $1$, the angle decreases from $90^\circ$ to $0^\circ$.
+\end{itemize}
+
+\subsection*{Explain and Unexplained Variation}
+
+\begin{itemize}
+    \item $y_i' \rightarrow$ \textit{estimated} value of $y$ from the regression equation of $y$ on $x$.
+
+        $y_i \rightarrow$ \textit{actual} value of $y$.
+
+    \item When $x = x_i$, $y_i' - \bar{y} = b_{yx} (x_i - \bar{x})$, then
+
+        $\sum (y_i - \bar{y})^2 = \sum (y_i - y_i')^2 + \sum (y_i' - \bar{y})^2$
+
+    \item $\sum (y_i - \bar{y})^2$ is called the \textbf{total variation} of the observed values of  $y$.
+
+    \item $\sum (y_i - y_i')^2$ is called the \textbf{variation around the regression line} or \textbf{unexplained variation} or \textbf{residual variation}.
+
+    \item $\sum (y_i' - \bar{y})^2$ is called the \textbf{variation due to regression} or \textbf{explained variation}.
+
+    \item It can be shown that
+
+        $\frac{\text{explained variation}}{\text{total variation}} = r^2$
+
+        This is why $r^2$ is the \textbf{proportion of total variation explained by regression}
+
+\end{itemize}
+
+\subsection*{Rank Correlation Coefficient}
+
+\begin{itemize}
+    \item $r$ is calculated using the \textbf{actual values} of $x$ and $y$.
+
+    \item Sometimes precise measurements are not available, or the characters are not quantitative.
+
+        Example: Finding the extent of association between the \textit{intelligence} and \textit{efficiency in salesmanship} for a group of salesmen.
+
+    \item Solution: Arrange the individuals in order of merit for each character and assign ranks $1, 2, 3, \dots$.
+
+    \item Correlation coefficient between two series of ranks is called the \textbf{rank correlation coefficient}.
+
+    \item $R = 1 - \frac{6 \sum d^2}{n(n^2 - 1)}$
+
+        $d$ is the difference between the ranks of the same individual in the two series.
+
+        $n$ is the number of individuals.
+
+    \item The above formula is known as \textbf{Spearman's rank correlation coefficient}.
+
+    \item $-1 \leq R \leq 1$
+
+    \item $R = 1$ when the two series of ranks are in the \textbf{same} order.
+
+    \item $R = -1$ when the two series of ranks are in the \textbf{reverse} order of each other.
+
+    \item If individuals have same ranks in both series, the situation is called \textbf{tied ranks}.
+
+    \item The formula for $R$ is modified to account for tied ranks.
+
+        $R' = 1 - \frac{6 \sum d^2}{n(n^2 - 1)} - \frac{\sum t^3 - t}{n(n^2 - 1)}$
+
+        $t \rightarrow$ number of individuals involved in tied ranks.
+\end{itemize}
