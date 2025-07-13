@@ -1,0 +1,47 @@
+name: Build and Release PDF
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    env:
+      PDF_FILENAME: ${{ vars.PDF_FILENAME || format('{0}.pdf', github.event.repository.name) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: true
+
+      - name: Rename output to $PDF_FILENAME
+        run: mv main.pdf "$PDF_FILENAME"
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: ${{ env.PDF_FILENAME }}
+
+      - name: Release PDF
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: release-${{ github.run_number }}
+          name: PDF Release ${{ github.run_number }}
+          files: ${{ env.PDF_FILENAME }}
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
